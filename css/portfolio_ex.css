@@ -19,7 +19,7 @@ nav> div {max-width:1490px; margin:auto; display:flex; }
 nav p { flex:1; }
 nav p img {height:80px;}
 #menu { }
-#menu a {color:white; margin-left:20pt; text-shadow:0 0 10px rgba(255,255,255, 0.8); }
+#menu a {color:white; margin-left:20pt; text-shadow:0 0 10px rgba(0,0,0, 0.8); }
 
 
 
@@ -60,8 +60,8 @@ nav p img {height:80px;}
 padding:40vh 1px 0 1px; z-index:5; }
 #typing div {display:flex; justify-content:center; }
 .char1,.char2,.char3,.char4,.char5 {opacity:0; }
-#typing div:not(last-child){ font-size:2.5rem; line-height:150%;  text-shadow:0 1px 10px rgba(255,255,255, 0.8); }
-#typing div:last-child { font-size: 1.8rem; line-height:180%;  text-shadow:0 1px 10px rgba(255,255,255, 0.8); }
+#typing> div:not(last-child){ font-size:2.5rem; line-height:150%;  text-shadow:0 1px 10px rgba(255,255,255, 0.8); }
+#typing> div:last-child { font-size: 1.8rem; line-height:180%; text-shadow:0 1px 10px rgba(255,255,255, 0.8); }
 
 #click	{max-width:100px; margin:auto; margin-top:270px; text-align:center; z-index:5; }
 #click i {font-size:2.5rem; color:white; display:block; animation:upDown 1s infinite; }
@@ -174,7 +174,8 @@ background-repeat: no-repeat; background-size: 400% 400%; animation: backgroundC
 
 /*portfolio*/
 #portfolio {padding-left:20pt; padding-right:20pt; max-width:1400px; margin:auto; overflow:hidden; }
-#portfolio section { display:flex; }
+#portfolio .slide_wrap {position:relative; width:90%; height:90%; margin:auto; border:1px solid red; }
+#portfolio section { display:flex; position:absolute; }
 #portfolio section:not(:first-of-type) {min-height:100vh; padding-top:20vh; }
 #portfolio div .left {margin-right:60pt; }
 #portfolio h3 {font-size:1.8rem; padding-bottom:20pt; }
@@ -195,30 +196,30 @@ font-weight:500; font-size:1rem; margin:0 2pt 8pt 1pt; display:inline-block; tra
 
 
 /*first-portfolio*/
-#port1 {padding:10vh 0 17vh 0; transform:translateY(100pt); opacity:0; transition:2s; }
+#port1 {padding:10vh 0 17vh 0; transform:translateY(100pt); opacity:0; transition:2s; top:-100vh; }
 #port1.act {transform:translateY(0pt); opacity:1; }
 #port1 img {transform:translateY(-45pt); }
 
 
 
 /*second-portfolio*/
-#port2 div.left {transform:translateX(-50vw); transition:2s; }
+#port2 div.left {transform:translateX(-50vw); transition:2s; top: 0; }
 #port2 div.right {transform:translate(50vw, 20pt); transition:2s; }
 
 #port2.act div.left {transform:translateX(0); }
 #port2.act div.right {transform:translate(0, 20pt); }
 
 /*third-portfolio*/
-#port3 img {transform:translateY(-10pt); }
+#port3 img {transform:translateY(-10pt);   }
 #port3 div.left {transform:translateY(35pt); }
-#port3 {transform:scale(0); opacity:0; transition:2s; }
+#port3 {transform:scale(0); opacity:0; transition:2s; top: 100vh; }
 #port3.act {transform:scale(1); opacity:1;}
 
 
 /*fourth-portfolio*/
 #port4 img {transform:translateX(-15pt);  }
 #port4 div.left {transform:translateY(15pt);   }
-#port4 {transform:scale(0) translateY(50vh); transition:2s; }
+#port4 {transform:scale(0) translateY(50vh); transition:2s; top:200vh; }
 #port4.act {transform:scale(1) translateY(0); opacity:1;}
 
 
