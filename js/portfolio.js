@@ -120,9 +120,9 @@ $(document).ready(function(){
 	//절대값은 기준이 윈도우 / 상대값은 기준이 부모
 	const homeTop = $("body").offset().top;
 	const aboutTop = $("#about").offset().top;
-	const port1Top = $("#port1").offset().top - 400;
-	const port2Top = $("#port2").offset().top - 400;
-	const port3Top = $("#port3").offset().top - 400;
+	const port1Top = $("#port1").offset().top - 450;
+	const port2Top = $("#port2").offset().top - 500;
+	const port3Top = $("#port3").offset().top - 820;
 	const port4Top = $("#port4").offset().top - 780;
 	const eventTop = $("#event").offset().top - 400;
 	const contactTop=$("#contact").offset().top - 200;
