@@ -25,7 +25,20 @@ $(document).ready(function(){
 	
 	setTimeout(function(){
 		$("#top_bg").animate({opacity:"0"},1000);
+		$(".char1").animate({opacity:"1"},2000);
 	},1000);
+	setTimeout(function(){
+		$(".char2").animate({opacity:"1"},2000);
+	},2000);
+	setTimeout(function(){
+		$(".char3").animate({opacity:"1"},2000);
+	},3000);
+	setTimeout(function(){
+		$(".char4").animate({opacity:"1"},2000);
+	},4000);
+	setTimeout(function(){
+		$(".char5").animate({opacity:"1"},2000);
+	},5000);
 	setTimeout(function(){
 		$("#top_bg").animate({opacity:"0.3"},500);
 	},1500);
@@ -62,24 +75,34 @@ $(document).ready(function(){
 	
 	
 	//타자치는 효과
-	const $typing = "안녕하세요.\n구동현의 포토폴리오입니다."
+	//const $typing = "I'm getting better \n in every way every day.\n- 에밀쿠에";
 	//console.log($typing[7]); 
-	const tyLen = $typing.length;
+	//const tyLen = $typing.length;
 	//console.log(tyLen ); //21 개
 	
-	let i = 0;
-	let txt = "";
-	function type(){
+	//let i = 0;
+	//let txt = "";
+	/* function type(){
 		if(i < tyLen ){
 			txt += $typing[i];
 			//$("#typing").text( txt );
 			document.querySelector("#typing").innerText = txt;
 			i++;
-			setTimeout( type, 130 );
+			setTimeout( type, 110 );
 		}
-	}
+	} */
 	
-	type ();
+	//type ();
+	
+	//나타나는 글자
+	const $typing = document.querySelector("#typing");
+	console.log($typing);
+	const tyLen = $typing.length;
+	console.log(tyLen);
+	//나타나기
+	
+	
+	
 	
 	//상단 메뉴 호버 활성화 유지
 	$("#menu a").click(function(){

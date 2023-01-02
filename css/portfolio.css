@@ -16,7 +16,8 @@ a {text-decoration:none; }
 nav { position:fixed; width:100%; top:0; padding:20pt 10pt 10pt 10pt; font-weight:700; z-index:6; }
 nav.act {background-color:#262626; }
 nav> div {max-width:1490px; margin:auto; display:flex; }
-nav p {color:white; font-size:1.2rem; flex:1; }
+nav p { flex:1; }
+nav p img {height:80px;}
 #menu { }
 #menu a {color:white; margin-left:20pt; text-shadow:0 0 10px rgba(0,0,0, 0.8); }
 
@@ -24,23 +25,23 @@ nav p {color:white; font-size:1.2rem; flex:1; }
 
 /*헤더(배경이미지)*/
 #top {height:100vh; 
-background-image:url("../images/bg-5.jpg");
-background-attachment: fixed;
-background-position: center top;
-background-size: cover;
-background-repeat: no-repeat;
-position:relative;
+	background-image:url("../images/bg-5.jpg");
+	background-attachment: fixed;
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position:relative;
  }
 
 #top_bg {height:100vh;
-background-image:url("../images/bg-51.jpg");
-background-attachment: fixed;
-background-position: center top;
-background-size: cover;
-background-repeat: no-repeat; 
-position: absolute;
-top:0;
-width:100%;
+	background-image:url("../images/bg-51.jpg");
+	background-attachment: fixed;
+	background-position: center top;
+	background-size: cover;
+	background-repeat: no-repeat; 
+	position: absolute;
+	top:0;
+	width:100%;
 }
 
 #top-txt {
@@ -55,7 +56,13 @@ width:100%;
 
 
 
-#typing	{height:60vh; color:white; text-align:center; line-height:160%; font-size:2.5rem; padding:40vh 1px 0 1px; text-shadow:0 1px 10px rgba(0,0,0, 0.8); z-index:5;}
+#typing	{height:60vh; color:white; text-align:center; 
+padding:40vh 1px 0 1px; z-index:5; }
+#typing div {display:flex; justify-content:center; }
+.char1,.char2,.char3,.char4,.char5 {opacity:0; }
+#typing div:not(last-child){ font-size:2.5rem; line-height:150%;  text-shadow:0 1px 10px rgba(0,0,0, 0.8); }
+#typing div:last-child { font-size: 1.8rem; line-height:180%;  text-shadow:0 1px 10px rgba(0,0,0, 0.8); }
+
 #click	{max-width:100px; margin:auto; margin-top:270px; text-align:center; z-index:5; }
 #click i {font-size:2.5rem; color:white; display:block; animation:upDown 1s infinite; }
 #click a {color:white;}
@@ -161,11 +168,11 @@ background-repeat: no-repeat; background-size: 400% 400%; animation: backgroundC
 #skill label {font-size:0.8rem; font-weight:400; display:inline-block; width:45%; }
 #skill progress {width:53%; -webkit-appearance:none; transform: translate(0px, 4px); }
 #skill ::-webkit-progress-bar {background-color:#eee; height:10px; border-radius:5px; }
-#skill ::-webkit-progress-value {background-color:#e23b28; border-radius:5px; }
+#skill ::-webkit-progress-value {background-color:blue; border-radius:5px; }
 
 
 
-
+/*portfolio*/
 
 
 
@@ -279,9 +286,18 @@ font-weight:500; font-size:1rem; margin:0 2pt 8pt 1pt; display:inline-block; tra
 	nav 	{padding:10pt 5pt 5pt 5pt; }
 	nav>div {flex-direction:column; }
 	nav p 	{margin-bottom:5pt; }
+	nav p img {height: 40px;}
+	
 	#menu a {font-size:0.9rem;}
 	#menu a:first-child {margin-left:0; }
-	#typing {font-size:2rem;  }
+	
+	#top { background-position: right 30% top;}
+	#top_bg { background-position: right 30% top;}
+	
+	#typing div:not(last-child) {font-size:1.8rem;  }
+	$typing div:last-child {font-size:1.2 rem;}
+	
+	#click { margin-top:200px; }
 	
 	
 	#about> div {flex-direction:column; padding:0 25pt 0 15pt; }
