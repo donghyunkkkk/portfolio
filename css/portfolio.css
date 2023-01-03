@@ -17,7 +17,7 @@ nav { position:fixed; width:100%; top:0; padding:20pt 10pt 10pt 10pt; font-weigh
 nav.act {background-color:#262626; }
 nav> div {max-width:1490px; margin:auto; display:flex; }
 nav p { flex:1; }
-nav p img {height:80px;}
+nav p img {height:70px; width:135px;}
 #menu { }
 #menu a {color:white; margin-left:20pt; text-shadow:0 0 10px rgba(255,255,255, 0.8); }
 
@@ -43,6 +43,7 @@ nav p img {height:80px;}
 	top:0;
 	width:100%;
 }
+
 
 #top-txt {
 	position:absolute;
