@@ -120,10 +120,6 @@ $(document).ready(function(){
 	//절대값은 기준이 윈도우 / 상대값은 기준이 부모
 	const homeTop = $("body").offset().top;
 	const aboutTop = $("#about").offset().top;
-	const port1Top = $("#port1").offset().top - 400;
-	const port2Top = $("#port2").offset().top - 400;
-	const port3Top = $("#port3").offset().top - 780;
-	const port4Top = $("#port4").offset().top - 780;
 	const eventTop = $("#event").offset().top - 400;
 	const contactTop=$("#contact").offset().top - 200;
 	
@@ -137,26 +133,13 @@ $(document).ready(function(){
 		if(st>= homeTop && st < aboutTop){
 			pos = 0;
 		}
-		if( st>= aboutTop && st<port1Top){
+		if( st>= aboutTop){
 			//About에서 오른쪽 "skill" bar 애니메이션
 			$("#photo progress").animate({value : 70});
 			$("#html progress").delay(100).animate({value : 80});
 			$("#jquery progress").delay(200).animate({value : 80});
 			$("#oven progress").delay(300).animate({value : 80});
 			pos = 1;
-		}
-		if( st>= port1Top ){
-			$("#port1").addClass(".act");
-			pos = 2;
-		}
-		if( st>= port2Top ){
-			$("#port2").addClass(".act");			
-		}
-		if( st>= port3Top ){
-			$("#port3").addClass(".act");					
-		}
-		if( st>= port4Top){
-			$("#port4").addClass(".act");
 		}
 		if( st>= eventTop && st<contactTop ){
 			pos = 3;
@@ -167,10 +150,20 @@ $(document).ready(function(){
 		$("#menu a").eq(pos).addClass('act').siblings().removeClass('act');
 	});
 	
-	
-	
-	
-	
+
+      var swiper = new Swiper(".mySwiper", {
+		spaceBetween: 10,
+		direction: "vertical",
+		mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+		loop: true,
+		loopAdditionalSlides: 1,
+		
+      });
+   
 	
 	
 	$("#event> div> div ").click(function(){

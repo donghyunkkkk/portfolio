@@ -94,13 +94,21 @@ $(document).ready(function(){
 	
 	//type ();
 	
-	//나타나는 글자
-	const $typing = document.querySelector("#typing");
-	console.log($typing);
-	const tyLen = $typing.length;
-	console.log(tyLen);
-	//나타나기
 	
+	
+    var swiper = new Swiper(".mySwiper", {
+		spaceBetween: 10,
+		direction: "vertical",
+		mousewheel: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+		loop: true,
+		loopAdditionalSlides: 1,
+		
+      });
+   
 	
 	
 	
@@ -120,10 +128,6 @@ $(document).ready(function(){
 	//절대값은 기준이 윈도우 / 상대값은 기준이 부모
 	const homeTop = $("body").offset().top;
 	const aboutTop = $("#about").offset().top;
-	const port1Top = $("#port1").offset().top - 450;
-	const port2Top = $("#port2").offset().top - 500;
-	const port3Top = $("#port3").offset().top - 820;
-	const port4Top = $("#port4").offset().top - 780;
 	const eventTop = $("#event").offset().top - 400;
 	const contactTop=$("#contact").offset().top - 200;
 	
@@ -137,7 +141,7 @@ $(document).ready(function(){
 		if(st>= homeTop && st < aboutTop){
 			pos = 0;
 		}
-		if( st>= aboutTop && st<port1Top){
+		if( st>= aboutTop){
 			//About에서 오른쪽 "skill" bar 애니메이션
 			$("#photo progress").animate({value : 70});
 			$("#html progress").delay(100).animate({value : 80});
@@ -145,24 +149,11 @@ $(document).ready(function(){
 			$("#oven progress").delay(300).animate({value : 80});
 			pos = 1;
 		}
-		if( st>= port1Top ){
-			$("#port1").addClass("act");
+		if( st>= eventTop && st<contactTop ){
 			pos = 2;
 		}
-		if( st>= port2Top ){
-			$("#port2").addClass("act");			
-		}
-		if( st>= port3Top ){
-			$("#port3").addClass("act");					
-		}
-		if( st>= port4Top){
-			$("#port4").addClass("act");
-		}
-		if( st>= eventTop && st<contactTop ){
-			pos = 3;
-		}
 		if( st>= contactTop ){
-			pos = 4;
+			pos = 3;
 		}
 		$("#menu a").eq(pos).addClass('act').siblings().removeClass('act');
 	});
