@@ -128,6 +128,7 @@ $(document).ready(function(){
 	//절대값은 기준이 윈도우 / 상대값은 기준이 부모
 	const homeTop = $("body").offset().top;
 	const aboutTop = $("#about").offset().top;
+	const portfolioTop = $("#portfolio").offset().top - 400;
 	const eventTop = $("#event").offset().top - 400;
 	const contactTop=$("#contact").offset().top - 200;
 	
@@ -141,7 +142,7 @@ $(document).ready(function(){
 		if(st>= homeTop && st < aboutTop){
 			pos = 0;
 		}
-		if( st>= aboutTop){
+		if( st>= aboutTop && st < portfolioTop ){
 			//About에서 오른쪽 "skill" bar 애니메이션
 			$("#photo progress").animate({value : 70});
 			$("#html progress").delay(100).animate({value : 80});
@@ -149,11 +150,14 @@ $(document).ready(function(){
 			$("#oven progress").delay(300).animate({value : 80});
 			pos = 1;
 		}
-		if( st>= eventTop && st<contactTop ){
+		if( st>= portfolioTop && st < eventTop ){
 			pos = 2;
 		}
-		if( st>= contactTop ){
+		if( st>= eventTop && st<contactTop ){
 			pos = 3;
+		}
+		if( st>= contactTop ){
+			pos = 4;
 		}
 		$("#menu a").eq(pos).addClass('act').siblings().removeClass('act');
 	});
